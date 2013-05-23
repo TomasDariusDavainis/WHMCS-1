@@ -3,11 +3,14 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset={$charset}" />
 <title>{$companyname} - {$pagetitle}{if $kbarticle.title} - {$kbarticle.title}{/if}</title>
-{if $systemurl}<base href="{$systemurl}" />{/if}
-<link rel="stylesheet" type="text/css" href="templates/{$template}/style.css" />
+{if $systemurl}<base href="{$systemurl}" />
+{/if}<link rel="stylesheet" type="text/css" href="templates/{$template}/style.css" />
 <script type="text/javascript" src="includes/jscript/jquery.js"></script>
-</head>
+{$headoutput}
+{if $livehelpjs}{$livehelpjs}
+{/if}</head>
 <body>
+{$headeroutput}
 <div id="top_container">
   <div id="top">
     <div id="company_title">{$companyname}</div>
@@ -21,12 +24,13 @@
       <li><a href="clientarea.php" title="{$LANG.clientareanavhome}">{$LANG.clientareanavhome}</a></li>
       <li><a href="clientarea.php?action=details" title="{$LANG.clientareanavdetails}">{$LANG.clientareanavdetails}</a></li>
       <li><a href="clientarea.php?action=products" title="{$LANG.clientareanavservices}">{$LANG.clientareanavservices}</a></li>
-      <li><a href="clientarea.php?action=domains" title="{$LANG.clientareanavdomains}">{$LANG.clientareanavdomains}</a></li>
+      {if $condlinks.domainreg || $condlinks.domaintrans}<li><a href="clientarea.php?action=domains" title="{$LANG.clientareanavdomains}">{$LANG.clientareanavdomains}</a></li>{/if}
+      {if $condlinks.pmaddon}<li><a href="index.php?m=project_management" title="{$LANG.clientareaprojects}">{$LANG.clientareaprojects}</a></li>{else}
+      <li><a href="clientarea.php?action=quotes" title="{$LANG.quotestitle}">{$LANG.quotestitle}</a></li>{/if}
       <li><a href="clientarea.php?action=invoices" title="{$LANG.invoices}">{$LANG.invoices}</a></li>
       <li><a href="supporttickets.php" title="{$LANG.clientareanavsupporttickets}">{$LANG.clientareanavsupporttickets}</a></li>
-      <li><a href="affiliates.php" title="{$LANG.affiliatestitle}">{$LANG.affiliatestitle}</a></li>
+      {if $condlinks.affiliates}<li><a href="affiliates.php" title="{$LANG.affiliatestitle}">{$LANG.affiliatestitle}</a></li>{/if}
       <li><a href="clientarea.php?action=emails" title="{$LANG.clientareaemails}">{$LANG.clientareaemails}</a></li>
-      <li><a href="onapp.php" title="OnApp">OnApp</a></li>
     </ul>
     <div class="clear"></div>
   </div>

@@ -28,10 +28,13 @@
 
 /* $Id: Smarty_Compiler.class.php 3163 2009-06-17 14:39:24Z monte.ohrt $ */
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 /**
  * Template compiling class
  * @package Smarty
  */
+
 class Smarty_Compiler extends Smarty {
 
     // internal vars

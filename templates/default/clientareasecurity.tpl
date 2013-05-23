@@ -35,6 +35,10 @@ function dialogSubmit() {
     {$twofaactivation}
 </div>
 
+<script type="text/javascript">
+$("#twofaactivation input:text:visible:first,#twofaactivation input:password:visible:first").focus();
+</script>
+
 {else}
 
 <h2>{$LANG.twofactorauth}</h2>
@@ -61,6 +65,10 @@ function dialogSubmit() {
 {/if}
 
 {if $securityquestionsenabled && !$twofaactivation}
+
+<br/><br/>
+
+<h2>{$LANG.clientareanavsecurityquestions}</h2>
 
 <form class="form-horizontal" method="post" action="{$smarty.server.PHP_SELF}?action=changesq">
 

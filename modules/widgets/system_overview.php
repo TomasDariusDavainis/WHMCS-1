@@ -4,23 +4,23 @@ if (!defined("WHMCS"))
 	die("This file cannot be accessed directly");
 
 function widget_system_overview($vars) {
-    global $_ADMINLANG;
+    global $whmcs,$_ADMINLANG;
 
     $title = $_ADMINLANG['home']['sysoverview'];
 
-    if ($_POST['getsystemoverview']) {
+    if ($whmcs->get_req_var('getsystemoverview')) {
 
         $activeclients = get_query_val("tblclients","COUNT(id)","status='Active'");
         $totalclients = get_query_val("tblclients","COUNT(id)","");
-        $clientsactive = round((($activeclients/$totalclients)*100),0);
+        $clientsactive = ($activeclients==0 || $totalclients==0) ? '0' : round((($activeclients/$totalclients)*100),0);
 
         $activeservices = get_query_val("tblhosting","COUNT(id)","domainstatus='Active'");
         $totalservices = get_query_val("tblhosting","COUNT(id)","");
-        $servicesactive = round((($activeservices/$totalservices)*100),0);
+        $servicesactive = ($activeservices==0 || $totalservices==0) ? '0' : round((($activeservices/$totalservices)*100),0);
 
         $unpaidinvoices = get_query_val("tblinvoices","COUNT(id)","status='Unpaid'");
         $overdueinvoices = get_query_val("tblinvoices","COUNT(id)","status='Unpaid' AND duedate<'".date("Ymd")."'");
-        $overduestatus = round((($overdueinvoices/$unpaidinvoices)*100),0);
+        $overduestatus = ($overdueinvoices==0 || $unpaidinvoices==0) ? '0' : round((($overdueinvoices/$unpaidinvoices)*100),0);
 
         echo '
 <table width="100%">

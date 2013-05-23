@@ -4,15 +4,13 @@ if (!defined("WHMCS"))
 	die("This file cannot be accessed directly");
 
 function widget_income_forecast($vars) {
-    global $_ADMINLANG,$currency,$currencytotal,$data;
+    global $whmcs,$_ADMINLANG,$currency,$currencytotal,$data;
 
     $title = $_ADMINLANG['home']['incomeforecast'];
 
-    if ($_POST['getincomeforecast']) {
-
 function ah_formatstat($billingcycle,$stat) {
     global $data,$currency,$currencytotal;
-    $value = $data[$billingcycle][$stat];
+    $value = array_key_exists($billingcycle,$data) ? $data[$billingcycle][$stat] : '';
     if (!$value) $value = 0;
     if ($stat=="sum") {
         if ($billingcycle=="Monthly") {
@@ -40,42 +38,40 @@ while ($data = mysql_fetch_array($result)) {
 }
 $result = select_query("tblhostingaddons,tblhosting,tblclients", "currency,tblhostingaddons.billingcycle,COUNT(*),SUM(recurring)", "tblhostingaddons.hostingid=tblhosting.id AND tblclients.id=tblhosting.userid AND (tblhostingaddons.status='Active' OR tblhostingaddons.status='Suspended') GROUP BY currency, tblhostingaddons.billingcycle");
 while ($data = mysql_fetch_array($result)) {
-    $incomestats[$data['currency']][$data['billingcycle']]["count"] += $data[2];
-    $incomestats[$data['currency']][$data['billingcycle']]["sum"] += $data[3];
+    if (isset($incomestats[$data['currency']][$data['billingcycle']]["count"])) $incomestats[$data['currency']][$data['billingcycle']]["count"] += $data[2];
+    else $incomestats[$data['currency']][$data['billingcycle']]["count"] = $data[2];
+    if (isset($incomestats[$data['currency']][$data['billingcycle']]["sum"])) $incomestats[$data['currency']][$data['billingcycle']]["sum"] += $data[3];
+    else $incomestats[$data['currency']][$data['billingcycle']]["sum"] = $data[3];
 }
 $result = select_query("tbldomains,tblclients", "currency,COUNT(*),SUM(recurringamount/registrationperiod)", "tblclients.id=tbldomains.userid AND tbldomains.status='Active' GROUP BY currency");
 while ($data = mysql_fetch_array($result)) {
-    $incomestats[$data['currency']]["Annually"]["count"] += $data[1];
-    $incomestats[$data['currency']]["Annually"]["sum"] += $data[2];
+    if (isset($incomestats[$data['currency']]["Annually"]["count"])) $incomestats[$data['currency']]["Annually"]["count"] += $data[1];
+    else $incomestats[$data['currency']]["Annually"]["count"] = $data[1];
+    if (isset($incomestats[$data['currency']]["Annually"]["sum"])) $incomestats[$data['currency']]["Annually"]["sum"] += $data[2];
+    else $incomestats[$data['currency']]["Annually"]["sum"] = $data[2];
 }
+
+$content = '';
 if (count($incomestats)) {
-foreach ($incomestats AS $currency=>$data) {
-    $currency = getCurrency("",$currency);
-    $currencytotal = 0;
-    echo "<div style=\"float:left;margin:10px 0 10px 0;".((count($incomestats)>1)?'width:50%;':'width:100%;')."text-align:center;\"><span class=\"textred\"><b>{$currency['code']} ".$_ADMINLANG['currencies']['currency']."</b></span><br />
-".$_ADMINLANG['billingcycles']['monthly'].": ".ah_formatstat('Monthly','sum')." (".ah_formatstat('Monthly','count').")<br />
-".$_ADMINLANG['billingcycles']['quarterly'].": ".ah_formatstat('Quarterly','sum')." (".ah_formatstat('Quarterly','count').")<br />
-".$_ADMINLANG['billingcycles']['semiannually'].": ".ah_formatstat('Semi-Annually','sum')." (".ah_formatstat('Semi-Annually','count').")<br />
-".$_ADMINLANG['billingcycles']['annually'].": ".ah_formatstat('Annually','sum')." (".ah_formatstat('Annually','count').")<br />
-".$_ADMINLANG['billingcycles']['biennially'].": ".ah_formatstat('Biennially','sum')." (".ah_formatstat('Biennially','count').")<br />
-".$_ADMINLANG['billingcycles']['triennially'].": ".ah_formatstat('Triennially','sum')." (".ah_formatstat('Triennially','count').")<br />
-<span class=\"textgreen\"><b>".$_ADMINLANG['billing']['annualestimate'].": ".formatCurrency($currencytotal)."</b></span></div>";
-}
+    foreach ($incomestats AS $currency=>$data) {
+        $currency = getCurrency("",$currency);
+        $currencytotal = 0;
+        $content .= "<div style=\"float:left;margin:10px 0 10px 0;".((count($incomestats)>1)?'width:50%;':'width:100%;')."text-align:center;\"><span class=\"textred\"><b>{$currency['code']} ".$_ADMINLANG['currencies']['currency']."</b></span><br />
+    ".$_ADMINLANG['billingcycles']['monthly'].": ".ah_formatstat('Monthly','sum')." (".ah_formatstat('Monthly','count').")<br />
+    ".$_ADMINLANG['billingcycles']['quarterly'].": ".ah_formatstat('Quarterly','sum')." (".ah_formatstat('Quarterly','count').")<br />
+    ".$_ADMINLANG['billingcycles']['semiannually'].": ".ah_formatstat('Semi-Annually','sum')." (".ah_formatstat('Semi-Annually','count').")<br />
+    ".$_ADMINLANG['billingcycles']['annually'].": ".ah_formatstat('Annually','sum')." (".ah_formatstat('Annually','count').")<br />
+    ".$_ADMINLANG['billingcycles']['biennially'].": ".ah_formatstat('Biennially','sum')." (".ah_formatstat('Biennially','count').")<br />
+    ".$_ADMINLANG['billingcycles']['triennially'].": ".ah_formatstat('Triennially','sum')." (".ah_formatstat('Triennially','count').")<br />
+    <span class=\"textgreen\"><b>".$_ADMINLANG['billing']['annualestimate'].": ".formatCurrency($currencytotal)."</b></span></div>";
+    }
 } else {
-    echo '<div align="center">No Active or Suspended Products/Services Found to build Forecast</div>';
+    $content = '<div align="center">No Active or Suspended Products/Services Found to build Forecast</div>';
 }
 
-exit;
-}
+    $content = '<div id="incomeforecast">'.$content.'</div>';
 
-    $content = '<div id="incomeforecast">'.$vars['loading'].'</div>';
-
-    $jquerycode = 'jQuery.post("index.php", { getincomeforecast: 1 },
-    function(data){
-      jQuery("#incomeforecast").html(data);
-    });';
-
-    return array('title'=>$title,'content'=>$content,'jquerycode'=>$jquerycode);
+    return array('title'=>$title,'content'=>$content);
 
 }
 

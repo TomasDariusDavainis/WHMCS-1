@@ -1,11 +1,10 @@
 <?php
-    $license = 'Leased-6b564755c87df6814887';
+    $license = 'Leased-4b1110cf5016ee6a240c';
     $db_host = 'localhost';
-    $db_username = 'whmcsuser';
-    $db_password = 'TXback12';
+    $db_username = 'whmcs';
+    $db_password = 'UKvegas11';
     $db_name = 'whmcs';
-    $cc_encryption_hash = '7j7O2qeSTlwaC7OZMJ00E3vJny6M3D61N4GFlLo4WL5oIJeli5bMYwlbViOPMKHq';
+    $cc_encryption_hash = 'xvXgFkVelS5HzylktiSWel28V9AQS4TfqHmVS8Z3QVAgkMrDU9qYljW7jnO1iy7y';
     $templates_compiledir = 'templates_c/';
     $mysql_charset = 'utf8';
-    require(dirname(__FILE__).'/bridgeipfix.php');
     ?>

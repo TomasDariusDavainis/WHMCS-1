@@ -1,1 +1,2 @@
-2.3.2
+<?php
+include 'version';

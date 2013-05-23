@@ -51,8 +51,8 @@
 <table cellspacing="1" cellpadding="0" class="frame"><tr><td>
 <table width="100%" cellpadding="2">
 <tr><td width="150" class="fieldarea">{$LANG.serverusername}/{$LANG.serverpassword}:</td><td>{$username}{if $password} / {$password}{/if}</td></tr>
-{if $modulechangepassword}<tr><td width="150" class="fieldarea">{$LANG.serverchangepasswordenter}:</td><td width="175"><input type="password" name="newpassword1" id="newpw" size="25" /></td><td><script type="text/javascript">showStrengthBar();</script></td></tr>
-<tr><td class="fieldarea">{$LANG.serverchangepasswordconfirm}:</td><td><input type="password" name="newpassword2" size="25" /></td></tr>{/if}
+{if $modulechangepassword}<tr><td width="150" class="fieldarea">{$LANG.serverchangepasswordenter}:</td><td width="175"><input type="password" name="newpw" id="newpw" size="25" /></td><td><script type="text/javascript">showStrengthBar();</script></td></tr>
+<tr><td class="fieldarea">{$LANG.serverchangepasswordconfirm}:</td><td><input type="password" name="confirmpw" size="25" /></td></tr>{/if}
 </table>
 </td></tr></table>
 

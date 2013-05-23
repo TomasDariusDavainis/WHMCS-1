@@ -21,7 +21,7 @@
 <div id="tabs">
     <ul class="nav nav-tabs" data-tabs="tabs">
         <li id="tab1nav" class="active"><a href="#tab1" data-toggle="tab">{$LANG.information}</a></li>
-        {if $modulechangepassword}<li id="tab1nav"><a href="#tab2" data-toggle="tab">{$LANG.serverchangepassword}</a></li>{/if}
+        {if $modulechangepassword}<li id="tab2nav"><a href="#tab2" data-toggle="tab">{$LANG.serverchangepassword}</a></li>{/if}
         {if $downloads}<li id="tab3nav"><a href="#tab3" data-toggle="tab">{$LANG.downloadstitle}</a></li>{/if}
         <li id="tab4nav"><a href="#tab4" data-toggle="tab">{$LANG.clientareahostingaddons}</a></li>
         {if $packagesupgrade || $configoptionsupgrade || $showcancelbutton || $modulecustombuttons}<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{$LANG.productmanagementactions}</a>
@@ -54,47 +54,49 @@
                 <p><h4>{$LANG.clientareahostingregdate}:</h4> {$regdate}</p>
                 <p><h4>{$LANG.orderproduct}:</h4> {$groupname} - {$product} <span class="label {$rawstatus}">{$status}</span>{if $domain}<div><a href="http://{$domain}" target="_blank">{$domain}</a></div>{/if}</p>
                 {if $dedicatedip}
-                <div class="col2half">
-                	<p><h4>{$LANG.domainregisternsip}:</h4> {$dedicatedip}</p>
-                </div>
-                <div class="clear"></div>
-                {/if}
-                {foreach from=$configoptions item=configoption}
-                <p><h4>{$configoption.optionname}:</h4> {if $configoption.optiontype eq 3}{if $configoption.selectedqty}{$LANG.yes}{else}{$LANG.no}{/if}{elseif $configoption.optiontype eq 4}{$configoption.selectedqty} x {$configoption.selectedoption}{else}{$configoption.selectedoption}{/if}</p>
-                {/foreach}
-                <div class="col2half">
-                    <h4>{$LANG.firstpaymentamount}:</h4> <span>{$firstpaymentamount}</span>
-                </div>
-                <div class="col2half">
-                    <h4>{$LANG.recurringamount}:</h4> <span>{$recurringamount}</span>
-                </div>
-                <div class="col2half">
-                    <h4>{$LANG.orderbillingcycle}:</h4> <span>{$billingcycle}</span>
-                </div>
-                <div class="col2half">
-                    <h4>{$LANG.clientareahostingnextduedate}:</h4> <span>{$nextduedate}</span>
-                </div>
-                <p><h4>{$LANG.orderpaymentmethod}:</h4> {$paymentmethod}</p>
-                {if $suspendreason}<h4>{$LANG.suspendreason}:</h4> <span>{$suspendreason}</span>{/if}
-                {if $lastupdate}
-                <div class="col2half">
-                    <p><h4>{$LANG.clientareadiskusage}:</h4> {$diskusage}MB / {$disklimit}MB ({$diskpercent})</p>
-                    <div class="usagecontainer"><div class="used" style="width:{$diskpercent}"></div></div>
-                </div>
-                <div class="col2half">
-                    <p><h4>{$LANG.clientareabwusage}:</h4> {$bwusage}MB / {$bwlimit}MB ({$bwpercent})</p>
-                    <div class="usagecontainer"><div class="used" style="width:{$bwpercent}"></div></div>
-                </div>
+                <p><h4>{$LANG.domainregisternsip}:</h4> {$dedicatedip}</p>
                 <div class="clear"></div>
                 {/if}
                 {foreach from=$configurableoptions item=configoption}
                 <div class="col2half">
-                    <h4>{$configoption.optionname}:</h4> <span>{if $configoption.optiontype eq 3}{if $configoption.selectedqty}{$LANG.yes}{else}{$LANG.no}{/if}{elseif $configoption.optiontype eq 4}{$configoption.selectedqty} x {$configoption.selectedoption}{else}{$configoption.selectedoption}{/if}</span>
+                    <p><h4>{$configoption.optionname}:</h4> <span>{if $configoption.optiontype eq 3}{if $configoption.selectedqty}{$LANG.yes}{else}{$LANG.no}{/if}{elseif $configoption.optiontype eq 4}{$configoption.selectedqty} x {$configoption.selectedoption}{else}{$configoption.selectedoption}{/if}</span></p>
                 </div>
                 {/foreach}
+                {if $firstpaymentamount neq $recurringamount}
+                <div class="col2half">
+                    <p><h4>{$LANG.firstpaymentamount}:</h4> <span>{$firstpaymentamount}</span></p>
+                </div>
+                {/if}
+                <div class="col2half">
+                    <p><h4>{$LANG.recurringamount}:</h4> <span>{$recurringamount}</span></p>
+                </div>
+                <div class="col2half">
+                    <p><h4>{$LANG.orderbillingcycle}:</h4> <span>{$billingcycle}</span></p>
+                </div>
+                <div class="col2half">
+                    <p><h4>{$LANG.clientareahostingnextduedate}:</h4> <span>{$nextduedate}</span></p>
+                </div>
+                <div class="col2half">
+                    <p><h4>{$LANG.orderpaymentmethod}:</h4> <span>{$paymentmethod}</span></p>
+                </div>
+                <div class="clear"></div>
+                {if $suspendreason}
+                <p><h4>{$LANG.suspendreason}:</h4> <span>{$suspendreason}</span></p>
+                {/if}
+                {if $lastupdate}
+                <div class="col2half">
+                    <p><h4>{$LANG.clientareadiskusage}:</h4> <span>{$diskusage}MB / {$disklimit}MB ({$diskpercent})</span></p>
+                    <div class="usagecontainer"><div class="used" style="width:{$diskpercent}"></div></div>
+                </div>
+                <div class="col2half">
+                    <p><h4>{$LANG.clientareabwusage}:</h4> <span>{$bwusage}MB / {$bwlimit}MB ({$bwpercent})</span></p>
+                    <div class="usagecontainer"><div class="used" style="width:{$bwpercent}"></div></div>
+                </div>
+                <div class="clear"></div>
+                {/if}
                 {foreach from=$productcustomfields item=customfield}
                 <div class="col2half">
-                    <p><h4>{$customfield.name}:</h4> <span>{$customfield.value}</span>
+                    <p><h4>{$customfield.name}:</h4> <span>{$customfield.value}</span></p>
                 </div>
                 {/foreach}
                 <div class="clear"></div>
@@ -121,7 +123,7 @@
         <div class="col70">
             <div class="internalpadding">
 
-                <form method="post" action="{$smarty.server.PHP_SELF}?action=productdetails">
+                <form method="post" action="{$smarty.server.PHP_SELF}?action=productdetails#tab2">
                 <input type="hidden" name="id" value="{$id}" />
                 <input type="hidden" name="modulechangepassword" value="true" />
 

@@ -232,9 +232,8 @@ body {
 
 .navbar .navbar-inner {
     margin: 0 auto;
-    /*padding: 0 20px;*/
-    /*width: 960px;*/
-	width: 70%;
+    padding: 0 20px;
+    width: 960px;
     height: 40px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -923,8 +922,31 @@ div#twofaactivation {
     border-radius: 10px;
 }
 
+div#twofaactivation .errorbox {
+    margin: 0 0 20px 0;
+    padding: 10px 20px;
+    background-color: #FF4F4F;
+    text-shadow: none;
+    color: #fff;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
 div#twofaactivation p {
     margin: 15px 0;
+}
+
+div.twofabackupcode {
+    margin: 15px 0;
+}
+
+div.twofabackupcode p {
+    margin: 0;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 /* Order Form Resets */

@@ -27,6 +27,7 @@ jQuery(document).ready(function(){
 function statechange() {
     var state = jQuery("#stateinput").val();
     var country = jQuery("select[name=country]").val();
+    if (typeof(statesTab) == "undefined") statesTab = '';
     if (states[country]) {
         jQuery("#stateinput").hide();
         jQuery("#stateinput").removeAttr("name");
@@ -39,7 +40,8 @@ function statechange() {
             if (stateval==state) stateops += ' selected="selected"'
             stateops += '>'+stateval+'</option>';
         }
-        jQuery("#stateinput").parent().append('<select name="state" id="stateselect"><option value="">Choose One...</option>'+stateops+'</select>');
+        if(statesTab != '') { statesTab = ' tabindex="'+statesTab+'"'; }
+        jQuery("#stateinput").parent().append('<select name="state" id="stateselect"'+statesTab+'><option value="">Choose One...</option>'+stateops+'</select>');
     } else {
         jQuery("#stateselect").remove();
         jQuery("#stateinput").show();

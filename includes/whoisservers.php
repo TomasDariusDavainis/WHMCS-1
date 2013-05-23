@@ -404,3 +404,10 @@
 .ac.ke|whois.kenic.or.ke|Not Registered
 .co.ke|whois.kenic.or.ke|Not Registered
 .gd|whois.adamsnames.tc|Available
+.rs|whois.rnids.rs|%ERROR:103
+.co.rs|whois.rnids.rs|%ERROR:103
+.org.rs|whois.rnids.rs|%ERROR:103
+.edu.rs|whois.rnids.rs|%ERROR:103
+.in.rs|whois.rnids.rs|%ERROR:103
+.ae|whois-check.aeda.net.ae|---Available
+.pw|whois.nic.pw|DOMAIN NOT FOUND

@@ -10,11 +10,6 @@ $(document).ready(function(){
 
     $("#replyfrm").submit(function () {
     	var status = $("#ticketstatus").val();
-        $.post("supporttickets.php", { action: "makingreply", id: ticketid },
-    	function(data){
-            $("#replyingadmin").html(data);
-        });
-
     	var response = $.ajax({
     		type: "POST",
     		url: "supporttickets.php?action=checkstatus",
@@ -32,6 +27,7 @@ $(document).ready(function(){
     });
 
     var currentTags = '';
+    if ($('#ticketTags').length) {
     $('#ticketTags').textext({
         plugins : 'tags prompt focus autocomplete ajax',
         prompt : 'Add one...',
@@ -48,6 +44,7 @@ $(document).ready(function(){
                 currentTags = newTags;
             }
 		});
+    }
 
     $(window).unload( function () {
         $.post("supporttickets.php", { action: "endreply", id: ticketid });

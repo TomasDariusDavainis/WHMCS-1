@@ -8,6 +8,8 @@
  * @return
  */
 function updateSubscriptionServerId ( $vars ) {
+    $orderid = ( isset($vars[orderid]) )? $vars[orderid] : $vars[OrderID]; 
+    
     $query = "
         SELECT
             tblhosting.server as default_server_id,
@@ -20,7 +22,9 @@ function updateSubscriptionServerId ( $vars ) {
         LEFT JOIN
             tblproducts ON tblhosting.packageid = tblproducts.id
         WHERE
-            tblorders.id = $vars[orderid]
+            tblorders.id = $orderid
+	AND 
+            tblproducts.servertype = 'onapp'		
     ";
 
     $result = full_query( $query );
@@ -428,3 +432,4 @@ function afterClientDelete ( $vars ) {
 //add_hook( "AfterConfigOptionsUpgrade", 1, 'afterConfigOptionsUpgrade' );
 add_hook( "AcceptOrder", 1, 'updateSubscriptionServerId' );
 add_hook( "ClientDelete", 1, 'afterClientDelete' );
+add_hook( "AfterShoppingCartCheckout", 1, 'updateSubscriptionServerId' );

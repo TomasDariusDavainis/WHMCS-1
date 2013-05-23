@@ -22,7 +22,6 @@ function deleteback(id) {
     | <strong>{$LANG.onappbackups}</strong>
     {if $configoptionsupgrade eq 'on'}  | <a title="{$LANG.onappupgradedowngrade}" href="{$smarty.const.ONAPP_FILE_NAME}?page=upgrade&id={$id}">{$LANG.onappupgradedowngrade}</a> {/if}
     | <a title="{$LANG.onappfirewallrules}" href="{$smarty.const.ONAPP_FILE_NAME}?page=firewallrules&id={$id}">{$LANG.onappfirewall}</a>
-    | <a title="{$LANG.onappbacktoservicedetails}" href="clientarea.php?action=productdetails&id={$id}">{$LANG.onappbacktoservicedetails}</a>
 </div>
 {if isset($error)}
 <div class="errorbox">

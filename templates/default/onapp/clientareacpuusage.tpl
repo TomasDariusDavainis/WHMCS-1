@@ -7,7 +7,6 @@
     | <a title="{$LANG.onappbackups}" href="{$smarty.const.ONAPP_FILE_NAME}?page=backups&id={$id}">{$LANG.onappbackups}</a>
     {if $configoptionsupgrade eq 'on'}  | <a title="{$LANG.onappupgradedowngrade}" href="{$smarty.const.ONAPP_FILE_NAME}?page=upgrade&id={$id}">{$LANG.onappupgradedowngrade}</a> {/if}
     | <a title="{$LANG.onappfirewallrules}" href="{$smarty.const.ONAPP_FILE_NAME}?page=firewallrules&id={$id}">{$LANG.onappfirewall}</a>
-    | <a title="{$LANG.onappbacktoservicedetails}" href="clientarea.php?action=productdetails&id={$id}">{$LANG.onappbacktoservicedetails}</a>
 </div>
 <p>{$LANG.onappcpuusagetitle}</p>
 <br/>

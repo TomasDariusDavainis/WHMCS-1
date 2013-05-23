@@ -1,5 +1,7 @@
 <?php
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 $_LANG['isocode'] = "fa";
 
 $_LANG['accountinfo'] = "مشخصات حساب";
@@ -89,7 +91,7 @@ $_LANG['choosedomains'] = " دامین انتخاب کنید";
 $_LANG['clickheretologin'] = "جهت ورود کلیک کنید";
 $_LANG['clientareaaccountaddons'] = "حساب افزودنیها";
 $_LANG['clientareaactive'] = "فعال";
-$_LANG['clientareaaddfundsdisabled'] = "در حال حاظر امکان افزودن وجه به حسابتان امکان پذیر نمیباشد.";
+$_LANG['clientareaaddfundsdisabled'] = "در حال حاضر امکان افزودن وجه به حسابتان امکان پذیر نمیباشد.";
 $_LANG['clientareaaddfundsnotallowed'] = "شما باید برای افزودن وجه به حسابتان حداثل یک سفارش فعال شده داشته باشید در غیر این صورت انجام این عملیات امکان پذیر نمی باشد!";
 $_LANG['clientareaaddon'] = " افزودنیها";
 $_LANG['clientareaaddonorderconfirmation'] = "متشکریم. سفارش شما برای  افزودنیهای موجود ثبت شد. لطفا طریقه پرداخت را از لیست زیر انتخاب کنید.";
@@ -846,7 +848,7 @@ $_LANG['invoicepaymentfailedconfirmation'] = "متاسفانه پرداخت شم
 
 $_LANG['promoappliedbutnodiscount'] = "کد تخفیف وارد شده روی سبد خریدتان اعمال شد اما هیچ مورد قابل تحفیفی وجود ندارد. لطفا شرایط این کد را بررسی کنید";
 
-$_LANG['upgradeerroroverdueinvoice'] = "در حال حاظر قادر به تغییر پلن این محصول نمیباشید. زیرا صورتحساب تمدید آن صادر شده است.<br /><br />جهت انجام این کار، لطفا ابتدا صورتحساب مربوطه را پرداخت کنید و سپس بلافاصله قادر به تغییر پلن آن خواهید بود و صورتحساب یا اعتبار مربوط به آن به حسابتان اضافه خواهد شد.";
+$_LANG['upgradeerroroverdueinvoice'] = "در حال حاضر قادر به تغییر پلن این محصول نمیباشید. زیرا صورتحساب تمدید آن صادر شده است.<br /><br />جهت انجام این کار، لطفا ابتدا صورتحساب مربوطه را پرداخت کنید و سپس بلافاصله قادر به تغییر پلن آن خواهید بود و صورتحساب یا اعتبار مربوط به آن به حسابتان اضافه خواهد شد.";
 
 $_LANG['subaccountactivate'] = "فعال نمودن حساب فرعی";
 $_LANG['subaccountactivatedesc'] = "تنظیم به عنوان یک حساب فرعی با اجازه ورود به پنل کاربری";
@@ -883,7 +885,7 @@ $_LANG['invoicespartialpayments'] = "پرداخت جزء";
 $_LANG['invoicestotaldue'] = "قابل پرداخت";
 
 $_LANG['masspaytitle'] = "پرداخت انبوه";
-$_LANG['masspaydescription'] = "در ذیل خلاسه ای از صورتحسابها و مبالغ قابل پرداخت آنها جهت پرداخت مشاهده میکنید.برای پرداخت لطفا روش پرداخت مورد نظرتان را انتخاب کنید و پرداخت را انجام دهید.";
+$_LANG['masspaydescription'] = "در ذیل خلاصه ای از صورتحسابها و مبالغ قابل پرداخت آنها جهت پرداخت مشاهده میکنید.برای پرداخت لطفا روش پرداخت مورد نظرتان را انتخاب کنید و پرداخت را انجام دهید.";
 $_LANG['masspayselected'] = "پرداخت موارد انتخابی";
 $_LANG['masspayall'] = "پرداخت همه";
 $_LANG['masspaymakepayment'] = "پرداخت";
@@ -993,7 +995,7 @@ $_LANG['quotedownload'] = "مشاهده/دانلود";
 $_LANG['quoteacceptbtn'] = "قبول مظنه";
 $_LANG['quotedlpdfbtn'] = "دانلود PDF";
 $_LANG['quotediscountheading'] = "تخفیف (%)";
-$_LANG['noquotes'] = "در حال حاظر مطنه ای در حساب شما ذخیره نشده اس.<br /> برای درخواست مظنه درخواست خود را از طریق تیکت ارسال کنید.";
+$_LANG['noquotes'] = "در حال حاضر مطنه ای در حساب شما ذخیره نشده اس.<br /> برای درخواست مظنه درخواست خود را از طریق تیکت ارسال کنید.";
 $_LANG['quotenumber'] = "مظنه #";
 $_LANG['quotesubject'] = "موضوع";
 $_LANG['quotedatecreated'] = "تاریخ ایجاد";
@@ -1196,7 +1198,7 @@ $_LANG['backtoserviceslist'] = "&laquo; برگشت به لیست سرویسها"
 $_LANG['backtodomainslist'] = "&laquo; برگشت به لیست دامین ها";
 
 $_LANG['clientareahomeorder'] = "برای مشاهده سرویسها و محصولات ما فرم سفارش را مشاهده نمایید.مشتریان فعلی همچنین میتوانند افزونه ها و سرویس های ویژه را از اینجا سفارش دهند.";
-$_LANG['clientareahomelogin'] = "آیا درحال حاظر پیش ما ثبت نام کرده اید؟ اگر اینطور است برای ورود به بخش کاربران روی دکمه زیر کلیک کنید تا بتوانید حسابتان و سرویسهایتان را مدیریت کنید.";
+$_LANG['clientareahomelogin'] = "آیا درحال حاضر پیش ما ثبت نام کرده اید؟ اگر اینطور است برای ورود به بخش کاربران روی دکمه زیر کلیک کنید تا بتوانید حسابتان و سرویسهایتان را مدیریت کنید.";
 $_LANG['clientareahomeorderbtn'] = "مشاهده فرم سفارش";
 $_LANG['clientareahomeloginbtn'] = "ورود به ناحیه کاربری";
 
@@ -1222,7 +1224,7 @@ $_LANG['availcreditbaldesc'] = "شما موجودی به مبلغ %s در حسا
 $_LANG['youhaveoverdueinvoices'] = "شما %s صورتحساب پرداخت نشده دارید که سررسید پرداخت آن گذشته است";
 $_LANG['overdueinvoicesdesc'] = "برای جلوگیری از  بروز وقفه در ارائه خدمات ، لطفا صورتحسابهای پرداخت نشده را هرچه سریعتر پرداخت کنید. %sپرداخت &raquo;%s";
 $_LANG['supportticketsnoneopen'] = "هیچ درخواست پشتیبانی فعال ندارید";
-$_LANG['invoicesnoneunpaid'] = "در حال حاظر صورتحساب پرداخت نشده ای وجود ندارد";
+$_LANG['invoicesnoneunpaid'] = "در حال حاضر صورتحساب پرداخت نشده ای وجود ندارد";
 
 $_LANG['registerdisablednotice'] = "لطفا یک <strong><a href=\"cart.php\">سفارش</a></strong>برای ثبت ارسال کنید.";
 
@@ -1246,7 +1248,7 @@ $_LANG['domaininfoexp'] = "اینجا میتوانید جزئیات دامینت
 $_LANG['domainrenewexp'] = "تمدید اتوماتیک را فعال کنید تا ما قبل از انقضای دامین به صورت خودکار صورتحساب تمدید آن را برایتان ارسال کنیم.";
 $_LANG['domainnsexp'] = "شما میتوانید جایی که دامینتان میزبانی میشود را اینجا تغییر دهید. لطفا در نظر داشته باشید تغییرات ممکن است تا 24 ساعت طول بکشد تا در همه جا منشر شود.";
 $_LANG['domainlockingexp'] = "دامینتان را قفل کنید تا از انتقال آن به سرویس دهنده های دیگر بدون اجازه شما جلوگیری شود.";
-$_LANG['domaincurrentlyunlocked'] = "دامنه در حال حاظر قفل نمیباشد.";
+$_LANG['domaincurrentlyunlocked'] = "دامنه در حال حاضر قفل نمیباشد.";
 $_LANG['domaincurrentlyunlockedexp'] = "بهتر است همیشه قفل رجیسترار فعال باشد مگر اینکه قصد داشته باشید دامین را به سرویس دهنده یا شخص دیگری منتقل کنید.";
 $_LANG['searchmultipletlds'] = "جستجوی همزمان چندین پسوند";
 
@@ -1343,7 +1345,7 @@ $_LANG['quotefilename'] = "Quote-";
 
 # Licensing Addon
 
-$_LANG['licensingkey'] = "کلید لایسنس";
+$_LANG['licensingkey'] = "کد لایسنس";
 $_LANG['licensingvaliddomains'] = "دامنه های معتبر";
 $_LANG['licensingvalidips'] = "IP های معتبر";
 $_LANG['licensingvaliddirectory'] = "دایرکتوری معتبر";
@@ -1363,71 +1365,78 @@ $_LANG['domainaddonsbuynow'] = "هم اکنون خرید کنید با";
 $_LANG['domainaddonsperyear'] = "/سال";
 $_LANG['domainaddonscancelareyousure'] = "آیا از غیر فعال سازی و حذف این افزونه مطمئن هستید ؟";
 $_LANG['domainaddonsconfirm'] = "تایید کنسل نمودن";
-$_LANG['domainaddonscancelsuccess'] = "Addon Deactivated Successfully!";
-$_LANG['domainaddonscancelfailed'] = "Failed to deactivate addon. Please contact support.";
+$_LANG['domainaddonscancelsuccess'] = "افزونه با موفقیت غیر فعال شد!";
+$_LANG['domainaddonscancelfailed'] = "غیر فعال نمودن افزونه ناموفق بود ، لطفا با پشتیبانی تماس بگیرید";
 
 # Version 5.2
 
-$_LANG['yourclientareahostingaddons'] = "You have the following addons for this product.";
-$_LANG['loginrequired'] = "Login Required";
-$_LANG['unsubscribe'] = "Unsubscribe";
-$_LANG['emailoptout'] = "Newsletter Opt-out";
-$_LANG['newsletterunsubscribe'] = "Newsletter Unsubscribe";
-$_LANG['emailoptoutdesc'] = "Tick to unsubscribe from our newsletters";
-$_LANG['alreadyunsubscribed'] = "You have already unsubscribed from our newsletter.";
-$_LANG['newsletterresubscribe'] = "If you wish to re-subscribe you can do so from the %sMy Details%s section of our client area at any time.";
-$_LANG['unsubscribehashinvalid'] = "Unsubscribe failed, please contact support.";
-$_LANG['unsubscribesuccess'] = "Unsubscribe Successful";
-$_LANG['newsletterremoved'] = "Thank you, Your email has now been removed from our mailing list.";
-$_LANG['erroroccured'] = "An Error Occurred";
-$_LANG['pwresetsuccessdesc'] = "Your password has now been reset. %sClick here%s to continue to the client area...";
-$_LANG['pwresetenternewpw'] = "Please enter your desired new password below.";
-$_LANG['ordererrorsbudomainbanned'] = "The subdomain prefix you entered is not allowed - please try another";
+$_LANG['yourclientareahostingaddons'] = "شما افزونه های زیر را برای این محصول در اختیار دارید.";
+$_LANG['loginrequired'] = "نیاز به وارد شدن به سیستم";
+$_LANG['unsubscribe'] = "لغو اشتراک";
+$_LANG['emailoptout'] = "انتخاب خبرنامه";
+$_LANG['newsletterunsubscribe'] = "لغو اشتراک خبرنامه";
+$_LANG['emailoptoutdesc'] = "جهت لغو اشتراک خبرنامه ما علامت بزنید";
+$_LANG['alreadyunsubscribed'] = "شما مشترک خبرنامه ما نیستید یا اشتراک خود را قبلا لغو نموده اید";
+$_LANG['newsletterresubscribe'] = "اگر میخواهید که مجددا به اعضای خبرنامه بپیوندید میتوانید از قیمت %sمشخصات من%s در پروفایلتان این کار را انجام دهید.";
+$_LANG['unsubscribehashinvalid'] = "لغو اشتراک انجام نشد. با پشتیبانی تماس بگیرید";
+$_LANG['unsubscribesuccess'] = "لغو اشتراک انجام شد";
+$_LANG['newsletterremoved'] = "با تشکر از شما، ایمیل شما هم اکنون از لیست اعضای خبرنامه ما حذف شد.";
+$_LANG['erroroccured'] = "خطایی رخ داد";
+$_LANG['pwresetsuccessdesc'] = "پسورد شما هم اکنون جایگزین شد. جهت ادامه %sاینجا کلیک کنید%s ...";
+$_LANG['pwresetenternewpw'] = "لطفا پسورد جدید مورد نظرتان را اینجا وارد کنید.";
+$_LANG['ordererrorsbudomainbanned'] = "پیشوند ساب دامین وارد شده مورد قبول نمیباشد. لطفا نام دیگری انتخاب کنید";
 
-$_LANG['ticketfeedbacktitle'] = "Feedback Request for Ticket";
+$_LANG['ticketfeedbacktitle'] = "تقاضای نظر در مورد تیکت";
 
-$_LANG['nosupportdepartments'] = "No support departments found. Please try again later.";
+$_LANG['nosupportdepartments'] = "بخش پشتیبانی ای یافت نشد ، لطفا بعدا تلاش کنید.";
 
-$_LANG['feedbackclosed'] = "Feedback cannot be provided until the ticket is closed";
-$_LANG['feedbackprovided'] = "You have already provided feedback for this ticket";
-$_LANG['feedbackthankyou'] = "We thank you for taking the time to provide your feedback.";
-$_LANG['feedbackreceived'] = "Submission Received";
-$_LANG['feedbackdesc'] = "Please can we ask you to take a moment of your time to fill out the below form about the quality of your experience with our support team.";
-$_LANG['feedbackclickreview'] = "Click here to Review The Ticket";
-$_LANG['feedbackopenedat'] = "Opened At";
-$_LANG['feedbacklastreplied'] = "Last Replied To";
-$_LANG['feedbackstaffinvolved'] = "Staff Involved";
-$_LANG['feedbacktotalduration'] = "Total Duration";
-$_LANG['feedbackpleaserate1'] = "Please rate (on a scale of 1 to 10) how well";
-$_LANG['feedbackpleasecomment1'] = "Please comment on how well";
-$_LANG['feedbackhandled'] = "handled this support request";
-$_LANG['feedbackworst'] = "Worst";
-$_LANG['feedbackbest'] = "Best";
-$_LANG['feedbackimprove'] = "How may we make your experience better in the future?";
-$_LANG['pleaserate2'] = "handled this support request";
-$_LANG['returnclient'] = "Return to Client Area";
+$_LANG['feedbackclosed'] = "بازخورد تا زمان بسته شدن تیکت قابل ارائه نمیباشد.";
+$_LANG['feedbackprovided'] = "شما در حال حاضر نظرتان را در مورد این تیکت ارائه داده اید";
+$_LANG['feedbackthankyou'] = "از وقتی که برای ارائه نظرتان در مورد این تیکت صرف نمودید سپاسگذاریم";
+$_LANG['feedbackreceived'] = "اطلاعات دریافت شد";
+$_LANG['feedbackdesc'] = "آیا میتوانیم از شما خواهش کنیم که چند لحظه از وقتتان را صرف پر کردن فرم زیر در مورد کیفیت و تجربه شما با تیم پشتیبانی ما کنید ؟";
+$_LANG['feedbackclickreview'] = "اینجا کلیک کنید تا تیکت را بازبینی کنید";
+$_LANG['feedbackopenedat'] = "باز شده در";
+$_LANG['feedbacklastreplied'] = "آخرین پاسخ به ";
+$_LANG['feedbackstaffinvolved'] = "کارکنان ";
+$_LANG['feedbacktotalduration'] = "زمان کل";
+$_LANG['feedbackpleaserate1'] = "لطفا از 1 تا 10 نمره دهید چطور";
+$_LANG['feedbackpleasecomment1'] = "لطفا توضیح دهید چطور";
+$_LANG['feedbackhandled'] = "به این تیکت رسیدگی شد";
+$_LANG['feedbackworst'] = "بدترین";
+$_LANG['feedbackbest'] = "بهترین";
+$_LANG['feedbackimprove'] = "چطور میتوانیم در آینده بهتر به شما کمک کنیم؟";
+$_LANG['pleaserate2'] = "به این تیکت رسیدگی شد";
+$_LANG['returnclient'] = "بازگشت به بخش کاربران";
 
-$_LANG['clientareanavsecurity'] = "Security Settings";
-$_LANG['twofactorauth'] = "Two-Factor Authentication";
-$_LANG['twofaenable'] = "Enable Two-Factor Authentication";
-$_LANG['twofadisable'] = "Disable Two-Factor Authentication";
-$_LANG['twofaenableclickhere'] = "Click here to Enable";
-$_LANG['twofadisableclickhere'] = "Click here to Disable";
-$_LANG['twofaenforced'] = "The system administrator has enforced that you must enable Two-Factor Authentication before you can continue. This page will guide you through the process of setting it up.";
-$_LANG['twofasetup'] = "Two-Factor Authentication Setup Process";
-$_LANG['twofasetupgetstarted'] = "Get Started";
-$_LANG['twofaactivationintro'] = "Two-Factor Authentication adds an extra layer of protection to logins. Once enabled &amp; configured, each time you sign in you will be asked to enter both your username & password as well as a second factor such as a security code.";
-$_LANG['twofaactivationmultichoice'] = "To continue, please choose your desired Two-Factor Authentication method from below.";
-$_LANG['twofadisableintro'] = "To disable Two-Factor Authentication please confirm your password in the field below.";
-$_LANG['twofaactivationerror'] = "An error occurred while attempting to activate Two-Factor Authentication for your account. Please try again.";
-$_LANG['twofamoduleerror'] = "An error occurred loading the module. Please try again.";
-$_LANG['twofaactivationcomplete'] = "Two-Factor Authentication Setup is Complete!";
-$_LANG['twofadisableconfirmation'] = "Two-Factor Authentication has now been disabled for your account.";
-$_LANG['twofabackupcodeis'] = "Your Backup Code is";
-$_LANG['twofabackupcodeexpl'] = "Write this down on paper and keep it safe.<br />It will be needed if you ever lose your 2nd factor device or it is unavailable to you.";
-$_LANG['twofaconfirmpw'] = "Enter Your Password";
+$_LANG['clientareanavsecurity'] = "تنظیمات امنیتی";
+$_LANG['twofactorauth'] = "تایید هویت دو عاملی";
+$_LANG['twofaenable'] = "فعالسازی تایید هویت دو عاملی";
+$_LANG['twofadisable'] = "غیر فعال کردن تایید هویت دو عاملی";
+$_LANG['twofaenableclickhere'] = "برای فعالسازی کلیک کنید";
+$_LANG['twofadisableclickhere'] = "جهت غیر فعال کردن کلیک کیند";
+$_LANG['twofaenforced'] = "مدیر سیستم سیستم تایید هویت دو عاملی را الزامی دانسته است. شما باید تایید هویت دو عاملی را  فعال کنید تا بتوانید ادامه دهید. این صفحه شما را در مراحل تنظیم این سیستم یاری میدهد.";
+$_LANG['twofasetup'] = "مراحل تنظیم تایید هویت دو عاملی";
+$_LANG['twofasetupgetstarted'] = "شروع کنید";
+$_LANG['twofaactivationintro'] = "تایید هویت دو عاملی یک لایه ی امنیتی اضافی در مقابل ورود به حساب شما قرار میدهد. با فعالسازی و تنظیم این سیستم هر موقع که میخواهید به سایت وارد شوید از شما علاوه بر نام کاربری و پسورد ، عامل دیگری نیز پرسیده میشود که به عنوان یک کد امنیتی به کار میرود.";
+$_LANG['twofaactivationmultichoice'] = "یرای ادامه ، لطفا روش مورد نظرتان را جهت تایید هویت دو عاملی انتخاب کنید";
+$_LANG['twofadisableintro'] = "برای غیر فعال نمودن تایید هویت دو عاملی رمز ورودتان را در این قسمت وارد کنید.";
+$_LANG['twofaactivationerror'] = "خظایی در فعال کردن تایید هویت دو عاملی برای حساب شما رخ داد. لطفا مجددا تلاش کنید.";
+$_LANG['twofamoduleerror'] = "خطایی در بارگذاری ماژول مربوطه رخ داد. لطفا مجددا تلاش کنید.";
+$_LANG['twofaactivationcomplete'] = "تنظیمات تایید هویت دو عاملی تکمیل شد.";
+$_LANG['twofadisableconfirmation'] = "تایید هویت دو عاملی هم اکنون روی حساب شما غیر فعال شد";
+$_LANG['twofabackupcodeis'] = "کد پشتیبان شما عبارت است از: ";
+$_LANG['twofanewbackupcodeis'] = "Your New Backup Code is";
+$_LANG['twofabackupcodelogin'] = "Enter Your Backup Code Above to Login";
+$_LANG['twofabackupcodeexpl'] = "این کد را در جایی امن نگهداری کنید.<br /> این کد در مواقعی که دستگاه تایید هویت دو مرحله ای را همراه نداشته باشید یا آن را گم کرده باشید به کارتان خواهد آمد.";
+$_LANG['twofaconfirmpw'] = "رمزتان را وارد کنید";
 $_LANG['twofa2ndfactorreq'] = "Your second factor is required to complete login.";
 $_LANG['twofa2ndfactorincorrect'] = "The second factor you supplied was incorrect. Please try again.";
 $_LANG['twofabackupcodereset'] = "Login via Backup Code Successful. Backup Codes are valid once only. It will now be reset.";
 $_LANG['twofacantaccess2ndfactor'] = "Can't Access Your 2nd Factor Device?";
 $_LANG['twofaloginusingbackupcode'] = "Login using Backup Code";
+$_LANG['twofageneralerror'] = "An error occurred loading the module. Please try again.";
+
+$_LANG['continue'] = "Continue";
+$_LANG['disable'] = "Disable";
+$_LANG['manage'] = "Manage";

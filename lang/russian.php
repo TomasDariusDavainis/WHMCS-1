@@ -1,5 +1,7 @@
 <?php
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 $_LANG['isocode'] = "ru";
 
 $_LANG['accountinfo'] = "Информация об аккаунте";
@@ -1424,6 +1426,8 @@ $_LANG['twofamoduleerror'] = "An error occurred loading the module. Please try a
 $_LANG['twofaactivationcomplete'] = "Two-Factor Authentication Setup is Complete!";
 $_LANG['twofadisableconfirmation'] = "Two-Factor Authentication has now been disabled for your account.";
 $_LANG['twofabackupcodeis'] = "Your Backup Code is";
+$_LANG['twofanewbackupcodeis'] = "Your New Backup Code is";
+$_LANG['twofabackupcodelogin'] = "Enter Your Backup Code Above to Login";
 $_LANG['twofabackupcodeexpl'] = "Write this down on paper and keep it safe.<br />It will be needed if you ever lose your 2nd factor device or it is unavailable to you.";
 $_LANG['twofaconfirmpw'] = "Enter Your Password";
 $_LANG['twofa2ndfactorreq'] = "Your second factor is required to complete login.";
@@ -1431,3 +1435,8 @@ $_LANG['twofa2ndfactorincorrect'] = "The second factor you supplied was incorrec
 $_LANG['twofabackupcodereset'] = "Login via Backup Code Successful. Backup Codes are valid once only. It will now be reset.";
 $_LANG['twofacantaccess2ndfactor'] = "Can't Access Your 2nd Factor Device?";
 $_LANG['twofaloginusingbackupcode'] = "Login using Backup Code";
+$_LANG['twofageneralerror'] = "An error occurred loading the module. Please try again.";
+
+$_LANG['continue'] = "Continue";
+$_LANG['disable'] = "Disable";
+$_LANG['manage'] = "Manage";

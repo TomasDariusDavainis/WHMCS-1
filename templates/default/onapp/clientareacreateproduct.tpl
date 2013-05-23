@@ -4,7 +4,6 @@
     {$error}
 </div>
 {/if}
-<input type="button" value="« Back to Services List" class="btn" onclick="window.location='clientarea.php?action=products'">
 <p>{$LANG.onappcreatevmtitle}</p>
 <h2 class="heading2">{$LANG.onappvmdetails}</h2>
 <form name="create_vm" id="create_vm" method="get" action="{$smarty.const.ONAPP_FILE_NAME}">

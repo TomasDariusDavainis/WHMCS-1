@@ -4,11 +4,11 @@ if (!defined("WHMCS"))
 	die("This file cannot be accessed directly");
 
 function widget_whmcs_news($vars) {
-    global $_ADMINLANG;
+    global $whmcs,$_ADMINLANG;
 
     $title = $_ADMINLANG['home']['whmcsnewsfeed'];
 
-    if ($_POST['getwhmcsnews']) {
+    if ($whmcs->get_req_var('getwhmcsnews')) {
         if (!function_exists("ticketAutoHyperlinks")) require(ROOTDIR.'/includes/ticketfunctions.php');
         $feed = curlCall('http://www.whmcs.com/feeds/news.php','');
         $feed = json_decode($feed,1);

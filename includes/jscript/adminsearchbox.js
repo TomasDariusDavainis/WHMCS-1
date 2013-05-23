@@ -16,7 +16,7 @@ function populate(o) {
   mitems['services']=['Service ID','Domain','Client Name','Product','Billing Cycle','Next Due Date','Status','Username','Dedicated IP','Assigned IPs','Subscription ID','Notes'];
   mitems['domains']=['Domain ID','Domain','Client Name','Registrar','Expiry Date','Status','Subscription ID','Notes'];
   mitems['invoices']=['Invoice #','Client Name','Line Item','Invoice Date','Due Date','Date Paid','Total Due','Status'];
-  mitems['tickets']=['Ticket #','Subject','Client Name','Email Address'];
+  mitems['tickets']=['Ticket #','Tag','Subject','Client Name','Email Address'];
   d.options.length=0;
   cur=mitems[o.options[o.selectedIndex].value];
   if(!cur){return;}

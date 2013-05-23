@@ -9,7 +9,6 @@
     | <a title="{$LANG.onappbackups}" href="{$smarty.const.ONAPP_FILE_NAME}?page=backups&id={$id}">{$LANG.onappbackups}</a>
     | <strong>{$LANG.onappupgradedowngrade}</strong>
     | <a title="{$LANG.onappfirewallrules}" href="{$smarty.const.ONAPP_FILE_NAME}?page=firewallrules&id={$id}">{$LANG.onappfirewall}</a>
-    | <a title="{$LANG.onappbacktoservicedetails}" href="clientarea.php?action=productdetails&id={$id}">{$LANG.onappbacktoservicedetails}</a>
 </div>
 {if isset($error)}
 <div class="errorbox">

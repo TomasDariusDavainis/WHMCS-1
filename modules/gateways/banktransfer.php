@@ -2,6 +2,8 @@
 
 # Bank Transfer Payment Gateway Module
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 function banktransfer_config() {
 
     $configarray = array(
@@ -30,5 +32,3 @@ function banktransfer_link($params) {
     return $code;
 
 }
-
-?>

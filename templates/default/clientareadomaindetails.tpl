@@ -275,7 +275,7 @@
                         <strong>{$LANG.domainidprotection}</strong><br />
                         {$LANG.domainaddonsidprotectioninfo}<br />
                         {if $addonstatus.idprotection}
-                        <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=idprotect&token={$token}">Disable</a>
+                        <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=idprotect&token={$token}">{$LANG.disable}</a>
                         {else}
                         <a href="clientarea.php?action=domainaddons&id={$domainid}&buy=idprotect&token={$token}">{$LANG.domainaddonsbuynow} {$addonspricing.idprotection}</a>
                         {/if}
@@ -292,7 +292,7 @@
                         <strong>{$LANG.domainaddonsdnsmanagement}</strong><br />
                         {$LANG.domainaddonsdnsmanagementinfo}<br />
                         {if $addonstatus.dnsmanagement}
-                        <a href="clientarea.php?action=domaindns&domainid={$domainid}">Manage</a> | <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=dnsmanagement&token={$token}">Disable</a>
+                        <a href="clientarea.php?action=domaindns&domainid={$domainid}">{$LANG.manage}</a> | <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=dnsmanagement&token={$token}">{$LANG.disable}</a>
                         {else}
                         <a href="clientarea.php?action=domainaddons&id={$domainid}&buy=dnsmanagement&token={$token}">{$LANG.domainaddonsbuynow} {$addonspricing.dnsmanagement}</a>
                         {/if}
@@ -309,7 +309,7 @@
                         <strong>{$LANG.domainemailforwarding}</strong><br />
                         {$LANG.domainaddonsemailforwardinginfo}<br />
                         {if $addonstatus.emailforwarding}
-                        <a href="clientarea.php?action=domainemailforwarding&domainid={$domainid}">Manage</a> | <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=emailfwd&token={$token}">Disable</a>
+                        <a href="clientarea.php?action=domainemailforwarding&domainid={$domainid}">{$LANG.manage}</a> | <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=emailfwd&token={$token}">{$LANG.disable}</a>
                         {else}
                         <a href="clientarea.php?action=domainaddons&id={$domainid}&buy=emailfwd&token={$token}">{$LANG.domainaddonsbuynow} {$addonspricing.emailforwarding}</a>
                         {/if}

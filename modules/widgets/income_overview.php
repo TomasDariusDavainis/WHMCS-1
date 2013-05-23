@@ -5,7 +5,7 @@ if (!defined("WHMCS"))
 
 function widget_income_overview($vars) {
     global $_ADMINLANG,$chart;
-    
+
     $title = $_ADMINLANG['home']['incomeoverview'];
 
     $args = array();
@@ -15,7 +15,7 @@ function widget_income_overview($vars) {
     $args['ylabel'] = 'Default Currency';
     $args['chartarea'] = '80,40,85%,70%';
 
-    $content = $chart->drawChart('Area','income',$args,'300px');
+    $content = $chart->drawChart('Area',chartdata_income(),$args,'300px');
 
     return array('title'=>$title,'content'=>$content);
 

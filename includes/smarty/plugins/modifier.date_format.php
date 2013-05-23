@@ -5,6 +5,8 @@
  * @subpackage plugins
  */
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 /**
  * Include the {@link shared.make_timestamp.php} plugin
  */

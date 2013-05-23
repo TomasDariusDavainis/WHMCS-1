@@ -31,6 +31,7 @@
     {/if}
 {/foreach}
 </div>
+<div class="clear"></div>
 {/if}{if $kbarticles}
 {include file="$template/subheader.tpl" title=$LANG.knowledgebasearticles}
 

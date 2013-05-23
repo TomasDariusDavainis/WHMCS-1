@@ -66,7 +66,7 @@
         <div class="alert alert-block alert-warn textcenter">
         <p><strong>{$LANG.cancelrequestdomain}</strong></p>
         <p>{$LANG.cancelrequestdomaindesc|sprintf2:$domainnextduedate:$domainprice:$domainregperiod}</p>
-        <div align="center"><label class="control-label"><input type="checkbox" name="canceldomain" id="canceldomain" /> {$LANG.cancelrequestdomainconfirm}</label></div>
+        <p><label class="checkbox"><input type="checkbox" name="canceldomain" id="canceldomain" /> {$LANG.cancelrequestdomainconfirm}</label></p>
         </div>
         {/if}
 

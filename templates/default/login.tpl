@@ -8,7 +8,7 @@
 </div>
 {/if}
 
-<form method="post" action="{$systemsslurl}dologin.php" class="form-stacked" name="frmlogin">
+<form method="post" action="{$systemsslurl}dologin.php" class="form-stacked">
 
 <div class="logincontainer">
 
@@ -42,8 +42,8 @@
 
 </form>
 
-<script language="javascript">
-document.frmlogin.username.focus();
+<script type="text/javascript">
+$("#username").focus();
 </script>
 
 </div>

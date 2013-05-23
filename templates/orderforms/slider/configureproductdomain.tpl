@@ -1,3 +1,4 @@
+<script type="text/javascript" src="templates/orderforms/{$carttpl}/js/main.js"></script>
 <link rel="stylesheet" type="text/css" href="templates/orderforms/{$carttpl}/style.css" />
 
 <div id="order-slider">

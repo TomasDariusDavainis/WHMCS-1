@@ -4,21 +4,22 @@ if (!defined("WHMCS"))
 	die("This file cannot be accessed directly");
 
 function widget_calendar($vars) {
-    global $_ADMINLANG;
+    global $whmcs,$_ADMINLANG;
 
-    if ($_POST['getcalendarevents']) {
-        if (!$_POST['day']) $_POST['day'] = date("d");
+    if ($whmcs->get_req_var('getcalendarevents')) {
+        $day = $whmcs->get_req_var('day');
+        if (!$day) $day = date("d");
         echo '<div class="title">';
-        if ($_POST['day']==date("d")) echo 'Today, '.date("jS F Y",mktime(0,0,0,date("m"),$_POST['day'],date("Y")));
-        elseif ($_POST['day']==date("d")-1) echo 'Yesterday, '.date("jS F Y",mktime(0,0,0,date("m"),$_POST['day'],date("Y")));
-        elseif ($_POST['day']==date("d")+1) echo 'Tomorrow, '.date("jS F Y",mktime(0,0,0,date("m"),$_POST['day'],date("Y")));
-        else echo date("l, jS F Y",mktime(0,0,0,date("m"),$_POST['day'],date("Y")));
+        if ($day==date("d")) echo 'Today, '.date("jS F Y",mktime(0,0,0,date("m"),$day,date("Y")));
+        elseif ($day==date("d")-1) echo 'Yesterday, '.date("jS F Y",mktime(0,0,0,date("m"),$day,date("Y")));
+        elseif ($day==date("d")+1) echo 'Tomorrow, '.date("jS F Y",mktime(0,0,0,date("m"),$day,date("Y")));
+        else echo date("l, jS F Y",mktime(0,0,0,date("m"),$day,date("Y")));
         echo '</div>';
-        $numproducts = get_query_val("tblhosting","COUNT(id)","domainstatus IN ('Active','Suspended') AND nextduedate='".date("Y-m-").(int)$_POST['day']."'");
-        $numaddons = get_query_val("tblhostingaddons","COUNT(id)","status IN ('Active','Suspended') AND nextduedate='".date("Y-m-").(int)$_POST['day']."'");
-        $numdomains = get_query_val("tbldomains","COUNT(id)","status IN ('Active') AND nextduedate='".date("Y-m-").(int)$_POST['day']."'");
-        $numtodoitems = get_query_val("tbltodolist","COUNT(id)","duedate BETWEEN '".mktime(0,0,0,date("m"),$_POST['day'],date("Y"))."' AND '".mktime(0,0,0,date("m"),$_POST['day']+1,date("Y"))."'");
-        $numevents = get_query_val("tblcalendar","COUNT(id)","start>='".mktime(0,0,0,date("m"),$_POST['day'],date("Y"))."' AND start<'".mktime(0,0,0,date("m"),$_POST['day']+1,date("Y"))."'");
+        $numproducts = get_query_val("tblhosting","COUNT(id)","domainstatus IN ('Active','Suspended') AND nextduedate='".date("Y-m-").(int)$day."'");
+        $numaddons = get_query_val("tblhostingaddons","COUNT(id)","status IN ('Active','Suspended') AND nextduedate='".date("Y-m-").(int)$day."'");
+        $numdomains = get_query_val("tbldomains","COUNT(id)","status IN ('Active') AND nextduedate='".date("Y-m-").(int)$day."'");
+        $numtodoitems = get_query_val("tbltodolist","COUNT(id)","duedate BETWEEN '".mktime(0,0,0,date("m"),$day,date("Y"))."' AND '".mktime(0,0,0,date("m"),$day+1,date("Y"))."'");
+        $numevents = get_query_val("tblcalendar","COUNT(id)","start>='".mktime(0,0,0,date("m"),$day,date("Y"))."' AND start<'".mktime(0,0,0,date("m"),$day+1,date("Y"))."'");
         if ($numproducts==0 && $numaddons==0 && $numdomains==0 && $numtodoitems==0 && $numevents==0) echo '<div>No Events Scheduled</div>';
         else echo '<div>'.$numproducts.' Products/Services Due to Renew</div><div>'.$numaddons.' Addons Due to Renew</div><div>'.$numdomains.' Domains Due to Renew</div><div>'.$numtodoitems.' To-Do Items Due</div><div>'.$numevents.' Events Scheduled</div>';
         echo '<div style="padding-top:10px;"><a href="calendar.php"><img src="images/icons/add.png" align="top" /> Add New Event</a></div>';

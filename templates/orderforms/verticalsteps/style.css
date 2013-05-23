@@ -73,6 +73,15 @@
     border-radius: 6px;
 }
 
+#order-verticalsteps .maincontent .orderbox.ordernum {
+    margin: 0 auto;
+    padding: 15px;
+    width: 60%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
 #order-verticalsteps .maincontent .domainoptions {
     margin: 20px 40px;
     padding: 0;

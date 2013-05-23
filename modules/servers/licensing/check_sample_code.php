@@ -1,14 +1,16 @@
 <?php
 /*
-*************************************************************************
-*                                                                       *
-* WHMCompleteSolution - Client Management, Billing & Support System     *
-* Copyright (c) 2007-2012 WHMCS. All Rights Reserved,                   *
-* Licensing Addon Integration Code                                      *
-* Last Modified: 1st October 2010                                       *
-*                                                                       *
-*************************************************************************
-*/
+ *************************************************************************
+ *                                                                       *
+ * WHMCompleteSolution - Client Management, Billing & Support System     *
+ * Copyright (c) 2005-2013 WHMCS. All Rights Reserved,                   *
+ * Licensing Addon Integration Sample Code                               *
+ *                                                                       *
+ *************************************************************************
+ */
+
+// Do not allow any direct access
+exit;
 
 // Begin Check Function
 
@@ -170,5 +172,3 @@ if ($results["status"]=="Active") {
 } elseif ($results["status"]=="Suspended") {
     # Show Suspended Message
 }
-
-?>

@@ -2,6 +2,8 @@
 
 # Main in Payment Gateway Module
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 function mailin_config() {
 
     $configarray = array(
@@ -30,5 +32,3 @@ function mailin_link($params) {
     return $code;
 
 }
-
-?>

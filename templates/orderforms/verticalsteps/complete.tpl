@@ -1,11 +1,17 @@
-<link rel="stylesheet" type="text/css" href="templates/orderforms/cart/style.css" />
+<link rel="stylesheet" type="text/css" href="templates/orderforms/{$carttpl}/style.css" />
 
-<p align="center" class="cartheading">{$LANG.orderconfirmation}</p>
+<div id="order-verticalsteps">
+
+{include file="orderforms/verticalsteps/verticalsteps.tpl" step=5}
+
+<div class="maincontent">
+
+<h1>{$LANG.orderconfirmation}</h1>
 
 <p>{$LANG.orderreceived}</p>
 
-<div class="cartbox">
-<p align="center"><strong>{$LANG.ordernumberis} {$ordernumber}</strong></p>
+<div class="orderbox ordernum">
+    {$LANG.ordernumberis} {$ordernumber}
 </div>
 
 <p>{$LANG.orderfinalinstructions}</p>
@@ -24,3 +30,7 @@
 {/if}
 
 <p align="center"><a href="clientarea.php">{$LANG.ordergotoclientarea}</a></p>
+
+</div>
+
+</div>

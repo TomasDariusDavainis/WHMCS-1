@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="templates/orderforms/{$carttpl}/style.css" />
+<script language="javascript">var statesTab=10;</script>
 <script type="text/javascript" src="templates/orderforms/{$carttpl}/js/main.js"></script>
 <script type="text/javascript" src="includes/jscript/statesdropdown.js"></script>
 <script type="text/javascript" src="includes/jscript/pwstrength.js"></script>

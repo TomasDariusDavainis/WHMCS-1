@@ -1,5 +1,7 @@
 <?php
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 # Global
 $_ADMINLANG['global']['hometitle'] = "Admin Summary";
 $_ADMINLANG['global']['searchfilter'] = "Search/Filter";
@@ -214,6 +216,7 @@ $_ADMINLANG['clients']['overrideautoclose'] = "Status Update";
 $_ADMINLANG['clients']['overrideautocloseinfo'] = "Disable Automatic Status Update";
 $_ADMINLANG['clients']['invalidemail'] = "The email address you entered was not valid";
 $_ADMINLANG['clients']['2faenabled'] = "Enabled - Uncheck to disable";
+$_ADMINLANG['clients']['ccstoredisabled'] = "Credit Card Storage is Disabled";
 
 # Client Summary
 $_ADMINLANG['clientsummary']['title'] = "Client Profile";
@@ -315,7 +318,7 @@ $_ADMINLANG['services']['unsuspendsuccess'] = "Service Unsuspended Successfully"
 $_ADMINLANG['services']['terminatesuccess'] = "Service Terminated Successfully";
 $_ADMINLANG['services']['updownsuccess'] = "Service Upgraded/Downgraded Successfully";
 $_ADMINLANG['services']['pwchangesuccess'] = "Service Password Changed Successfully";
-$_ADMINLANG['services']['actionsuccess'] = "Action Completed Successfully";
+$_ADMINLANG['services']['customsuccess'] = "Action Completed Successfully";
 $_ADMINLANG['services']['notfound'] = "Service ID Not Found";
 $_ADMINLANG['services']['confirmcommand'] = "Confirm Module Command";
 $_ADMINLANG['services']['deleteproduct'] = "Delete Product/Service";
@@ -1432,7 +1435,7 @@ $_ADMINLANG['addonmodules']['accesscontrol'] = "Access Control";
 
 # Credit Management
 $_ADMINLANG['credit']['creditmanagement'] = "Credit Management";
-$_ADMINLANG['credit']['info'] = "From here you can manage the clients credit and the information you enter here is not visible to the client. You can manually adjust the credit balance from the Clients Profile page if required.";
+$_ADMINLANG['credit']['info'] = "You can manage a clients credit balance from here. Every credit adjustment, either addition or removal, requires a log entry and the descriptions you enter here are not visible to clients.";
 $_ADMINLANG['credit']['deleteq'] = "Are you sure you want to delete this credit and remove it from the clients balance?";
 $_ADMINLANG['credit']['addcredit'] = "Add Credit";
 $_ADMINLANG['credit']['removecredit'] = "Remove Credit";
@@ -2397,7 +2400,7 @@ $_ADMINLANG['general']['adminforcesslinfo'] = "Tick this box to force SSL Access
 $_ADMINLANG['general']['disableadminpwreset'] = "Disable Admin Password Reset";
 $_ADMINLANG['general']['disableadminpwresetinfo'] = "Tick this box to disable the forgotten password feature on the admin login page";
 $_ADMINLANG['general']['disableccstore'] = "Disable Credit Card Storage";
-$_ADMINLANG['general']['disableccstoreinfo'] = "Tick this box to not store customers credit cards in the database for repeat billing";
+$_ADMINLANG['general']['disableccstoreinfo'] = "Tick this box to not store customers credit cards in the database (Warning: This will delete any existing stored credit card data)";
 $_ADMINLANG['general']['allowccdelete'] = "Allow Client CC Removal";
 $_ADMINLANG['general']['allowccdeleteinfo'] = "Tick this box to allow customers to delete the credit card details stored on their account";
 $_ADMINLANG['general']['disablemd5'] = "Disable MD5 Clients Password";

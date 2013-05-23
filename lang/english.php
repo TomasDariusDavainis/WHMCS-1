@@ -1,5 +1,7 @@
 <?php
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 $_LANG['isocode'] = 'en';
 
 $_LANG['accountinfo'] = "Account Information";
@@ -464,7 +466,7 @@ $_LANG['loginincorrect'] = "Login Details Incorrect. Please try again.";
 $_LANG['loginintrotext'] = "You must login to access this page. These login details differ from your websites control panel username and password.";
 $_LANG['loginpassword'] = "Password";
 $_LANG['loginrememberme'] = "Remember Me";
-$_LANG['logoutcontinuetext'] = "Click here to continue.";
+$_LANG['logoutcontinuetext'] = "Click here to continue...";
 $_LANG['logoutsuccessful'] = "You have been successfully logged out.";
 $_LANG['logouttitle'] = "Logout";
 $_LANG['maxmind_anonproxy'] = "We do not allow orders to be placed using an Anonymous Proxy";
@@ -1413,7 +1415,7 @@ $_LANG['twofaenable'] = "Enable ".$_LANG['twofactorauth'];
 $_LANG['twofadisable'] = "Disable ".$_LANG['twofactorauth'];
 $_LANG['twofaenableclickhere'] = "Click here to Enable";
 $_LANG['twofadisableclickhere'] = "Click here to Disable";
-$_LANG['twofaenforced'] = "The system administrator has enforced that you must enable ".$_LANG['twofactorauth']." before you can continue. This page will guide you through the process of setting it up.";
+$_LANG['twofaenforced'] = "For your security, we require that you must enable ".$_LANG['twofactorauth']." before you can continue. This page will guide you through the process of setting it up.";
 $_LANG['twofasetup'] = "Two-Factor Authentication Setup Process";
 $_LANG['twofasetupgetstarted'] = "Get Started";
 $_LANG['twofaactivationintro'] = $_LANG['twofactorauth']." adds an extra layer of protection to logins. Once enabled &amp; configured, each time you sign in you will be asked to enter both your username & password as well as a second factor such as a security code.";
@@ -1424,10 +1426,17 @@ $_LANG['twofamoduleerror'] = "An error occurred loading the module. Please try a
 $_LANG['twofaactivationcomplete'] = $_LANG['twofactorauth']." Setup is Complete!";
 $_LANG['twofadisableconfirmation'] = $_LANG['twofactorauth']." has now been disabled for your account.";
 $_LANG['twofabackupcodeis'] = "Your Backup Code is";
+$_LANG['twofanewbackupcodeis'] = "Your New Backup Code is";
+$_LANG['twofabackupcodelogin'] = "Enter Your Backup Code Above to Login";
 $_LANG['twofabackupcodeexpl'] = "Write this down on paper and keep it safe.<br />It will be needed if you ever lose your 2nd factor device or it is unavailable to you.";
 $_LANG['twofaconfirmpw'] = "Enter Your Password";
 $_LANG['twofa2ndfactorreq'] = "Your second factor is required to complete login.";
 $_LANG['twofa2ndfactorincorrect'] = "The second factor you supplied was incorrect. Please try again.";
-$_LANG['twofabackupcodereset'] = "Login via Backup Code Successful. Backup Codes are valid once only. It will now be reset.";
+$_LANG['twofabackupcodereset'] = "Login via Backup Code Successful<br />Backup Codes are valid once only. It will now be reset.";
 $_LANG['twofacantaccess2ndfactor'] = "Can't Access Your 2nd Factor Device?";
 $_LANG['twofaloginusingbackupcode'] = "Login using Backup Code";
+$_LANG['twofageneralerror'] = "An error occurred loading the module. Please try again.";
+
+$_LANG['continue'] = "Continue";
+$_LANG['disable'] = "Disable";
+$_LANG['manage'] = "Manage";

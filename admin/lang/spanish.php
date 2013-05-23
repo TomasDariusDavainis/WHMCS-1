@@ -1,5 +1,7 @@
 <?php
 
+if (!defined("WHMCS")) die("This file cannot be accessed directly");
+
 # Global
 $_ADMINLANG['global']['hometitle'] = "Resumen";
 $_ADMINLANG['global']['searchfilter'] = "Buscar/Filtrar";
@@ -214,6 +216,7 @@ $_ADMINLANG['clients']['overrideautoclose'] = "Status Update";
 $_ADMINLANG['clients']['overrideautocloseinfo'] = "Disable Automatic Status Update";
 $_ADMINLANG['clients']['invalidemail'] = "The email address you entered was not valid";
 $_ADMINLANG['clients']['2faenabled'] = "Enabled - Uncheck to disable";
+$_ADMINLANG['clients']['ccstoredisabled'] = "Credit Card Storage is Disabled";
 
 # Client Summary
 $_ADMINLANG['clientsummary']['title'] = "Perfil del cliente";
@@ -315,7 +318,7 @@ $_ADMINLANG['services']['unsuspendsuccess'] = "Servicio Reactivado Satisfactoria
 $_ADMINLANG['services']['terminatesuccess'] = "Servicio Terminado Satisfactoriamente";
 $_ADMINLANG['services']['updownsuccess'] = "Servicio Ampliado/Bajado Satisfactoriamente";
 $_ADMINLANG['services']['pwchangesuccess'] = "El cambio de contraseña se ha realizado con éxito";
-$_ADMINLANG['services']['actionsuccess'] = "Acción Completada Satisfactoriamente";
+$_ADMINLANG['services']['customsuccess'] = "Action Completed Successfully";
 $_ADMINLANG['services']['notfound'] = "No se ha encontrado el ID de servicio";
 $_ADMINLANG['services']['confirmcommand'] = "Confirmar el módulo de comando";
 $_ADMINLANG['services']['deleteproduct'] = "Eliminar Producto/Servicio";

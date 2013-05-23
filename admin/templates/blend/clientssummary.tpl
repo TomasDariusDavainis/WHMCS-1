@@ -120,7 +120,7 @@
 <tr class="altrow"><td>{$_ADMINLANG.stats.affiliatesignups}</td><td>{$stats.numaffiliatesignups}</td></tr>
 </table>
 <ul>
-<li><a href="orders.php?client={$clientsdetails.userid}"><img src="images/icons/orders.png" border="0" align="absmiddle" /> {$_ADMINLANG.clientsummary.vieworders}</a>
+<li><a href="orders.php?clientid={$clientsdetails.userid}"><img src="images/icons/orders.png" border="0" align="absmiddle" /> {$_ADMINLANG.clientsummary.vieworders}</a>
 <li><a href="ordersadd.php?userid={$clientsdetails.userid}"><img src="images/icons/ordersadd.png" border="0" align="absmiddle" /> {$_ADMINLANG.orders.addnew}</a>
 </ul>
 </div>
